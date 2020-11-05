@@ -79,7 +79,7 @@ FixPlumed::FixPlumed(LAMMPS *lmp, int narg, char **arg) :
   int api_version;
   p->cmd("getApiVersion",&api_version);
   if ((api_version < 5) || (api_version > 7))
-    error->all(FLERR,"Incompatible API version for PLUMED in fix plumed. "
+    error->warning(FLERR,"Incompatible API version for PLUMED in fix plumed. "
                "Only Plumed 2.4.x, 2.5.x, and 2.6.x are tested and supported.");
 
 #if !defined(MPI_STUBS)
